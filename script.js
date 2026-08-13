@@ -19,29 +19,6 @@ function updateStickyHeader() {
 window.addEventListener("scroll", updateStickyHeader, { passive: true });
 updateStickyHeader();
 
-// Cursor glow
-const cursorGlow = document.getElementById("cursorGlow");
-if (cursorGlow && window.matchMedia("(pointer: fine)").matches) {
-  let cx = 0, cy = 0;
-  let tx = 0, ty = 0;
-  let rafId;
-
-  document.addEventListener("mousemove", (e) => {
-    tx = e.clientX;
-    ty = e.clientY;
-    if (!rafId) rafId = requestAnimationFrame(animateCursor);
-  });
-
-  function animateCursor() {
-    cx += (tx - cx) * 0.06;
-    cy += (ty - cy) * 0.06;
-    cursorGlow.style.transform = `translate(${cx - 200}px, ${cy - 200}px)`;
-    rafId = requestAnimationFrame(animateCursor);
-  }
-} else if (cursorGlow) {
-  cursorGlow.style.display = "none";
-}
-
 // Intersection observer for fade-in
 const observerOptions = { threshold: 0.12, rootMargin: "0px 0px -40px 0px" };
 const fadeObserver = new IntersectionObserver((entries) => {
