@@ -1,4 +1,4 @@
-/* MystiqDev script.js (Overhauled) */
+/* MadeByMyst script.js (Overhauled) */
 
 // Scroll progress bar
 const scrollProgressBar = document.getElementById("scrollProgress");

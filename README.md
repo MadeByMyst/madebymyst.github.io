@@ -1,14 +1,14 @@
 <div align="center">
 
-<img src="assets/logo-colored.webp" alt="MystiqDev Logo" width="80" />
+<img src="assets/logo-colored.webp" alt="MadeByMyst Logo" width="80" />
 
-# MystiqDev — Front-End Developer
+# MadeByMyst — Front-End Developer
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live-6c63ff?style=for-the-badge&logo=googlechrome&logoColor=white)](https://mystiqdev.github.io)
-[![GitHub followers](https://img.shields.io/github/followers/MystiqDev?style=for-the-badge&logo=github&logoColor=white&color=6c63ff)](https://github.com/MystiqDev)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-6c63ff?style=for-the-badge&logo=googlechrome&logoColor=white)](https://madebymyst.github.io)
+[![GitHub followers](https://img.shields.io/github/followers/MadeByMyst?style=for-the-badge&logo=github&logoColor=white&color=6c63ff)](https://github.com/MadeByMyst)
 [![Twitter](https://img.shields.io/badge/Twitter-@my__st45-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/my_st45)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Mystique--X-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mystique-x-9572b93a7/)
-[![Instagram](https://img.shields.io/badge/Instagram-mysti__qdev-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/mysti_qdev/)
+[![Instagram](https://img.shields.io/badge/Instagram-__mystiqdev72-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/_mystiqdev72/)
 
 **Front-end developer from Oman building clean, fast, and beautifully interactive websites.**  
 Pure HTML · CSS · Vanilla JavaScript — no frameworks, no bloat. Just craftsmanship.
@@ -54,20 +54,20 @@ I build exclusively with **pure HTML, CSS, and Vanilla JavaScript** — a delibe
 
 ## 🚀 Projects
 
-### [SiliconVPN](https://mystiqdev.github.io/silicon-vpn-fictinonal) &nbsp; `Landing Page`
+### [SiliconVPN](https://madebymyst.github.io/silicon-vpn) &nbsp; `Landing Page`
 > A polished landing page for a fictional VPN service — bold hero section, feature breakdowns, pricing cards, and persuasive copy structure.
 
-[![Repo](https://img.shields.io/badge/GitHub-Repo-6c63ff?style=flat-square&logo=github)](https://github.com/MystiqDev/silicon-vpn-fictinonal)
-[![Live](https://img.shields.io/badge/Live-Site-brightgreen?style=flat-square&logo=googlechrome)](https://mystiqdev.github.io/silicon-vpn-fictinonal)
+[![Repo](https://img.shields.io/badge/GitHub-Repo-6c63ff?style=flat-square&logo=github)](https://github.com/MadeByMyst/silicon-vpn)
+[![Live](https://img.shields.io/badge/Live-Site-brightgreen?style=flat-square&logo=googlechrome)](https://madebymyst.github.io/silicon-vpn)
 `HTML` `CSS` `JavaScript`
 
 ---
 
-### [Logan's Cafe](https://mystiqdev.github.io/logan-s-cafe-fictional/) &nbsp; `Business Site`
+### [Logan's Cafe](https://madebymyst.github.io/logans-cafe/) &nbsp; `Business Site`
 > A warm, atmospheric site for a fictional café — inviting aesthetic, clear menu presentation, and a layout that builds trust and drives foot traffic.
 
-[![Repo](https://img.shields.io/badge/GitHub-Repo-6c63ff?style=flat-square&logo=github)](https://github.com/MystiqDev/logan-s-cafe-fictional)
-[![Live](https://img.shields.io/badge/Live-Site-brightgreen?style=flat-square&logo=googlechrome)](https://mystiqdev.github.io/logan-s-cafe-fictional/)
+[![Repo](https://img.shields.io/badge/GitHub-Repo-6c63ff?style=flat-square&logo=github)](https://github.com/MadeByMyst/logans-cafe)
+[![Live](https://img.shields.io/badge/Live-Site-brightgreen?style=flat-square&logo=googlechrome)](https://madebymyst.github.io/logans-cafe/)
 `HTML` `CSS` `JavaScript`
 
 ---
@@ -150,11 +150,11 @@ Yes — I always recommend it. Messaging first helps us align on requirements an
 
 <div align="center">
 
-![MystiqDev's GitHub Stats](https://github-readme-stats.vercel.app/api?username=MystiqDev&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=6c63ff&icon_color=6c63ff)
+![MadeByMyst's GitHub Stats](https://github-readme-stats.vercel.app/api?username=MadeByMyst&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=6c63ff&icon_color=6c63ff)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=MystiqDev&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=6c63ff)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=MadeByMyst&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=6c63ff)
 
-![GitHub Streak](https://streak-stats.demolab.com?user=MystiqDev&theme=tokyonight&hide_border=true&background=0d1117&ring=6c63ff&fire=6c63ff&currStreakLabel=6c63ff)
+![GitHub Streak](https://streak-stats.demolab.com?user=MadeByMyst&theme=tokyonight&hide_border=true&background=0d1117&ring=6c63ff&fire=6c63ff&currStreakLabel=6c63ff)
 
 </div>
 
@@ -162,7 +162,7 @@ Yes — I always recommend it. Messaging first helps us align on requirements an
 
 ## 📬 Hire Me
 
-Available for freelance projects — reach out on any platform below or send a message directly from my [portfolio site](https://mystiqdev.github.io).
+Available for freelance projects — reach out on any platform below or send a message directly from my [portfolio site](https://madebymyst.github.io).
 
 <div align="center">
 
@@ -179,6 +179,6 @@ Available for freelance projects — reach out on any platform below or send a m
 
 <div align="center">
 
-*© 2026 MystiqDev — Built with HTML, CSS & Vanilla JS*
+*© 2026 MadeByMyst — Built with HTML, CSS & Vanilla JS*
 
 </div>
