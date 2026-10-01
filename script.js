@@ -1,214 +1,232 @@
-/* MadeByMyst script.js (Overhauled) */
+/* MadeByMyst script.js
+   Plain JavaScript, no libraries. The page works without it; this adds the
+   mobile menu, scroll effects, the FAQ animation and the contact form. */
 
-// Scroll progress bar
-const scrollProgressBar = document.getElementById("scrollProgress");
-function updateScrollProgress() {
-  if (!scrollProgressBar) return;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
-  scrollProgressBar.style.width = pct + "%";
-}
-window.addEventListener("scroll", updateScrollProgress, { passive: true });
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// Sticky header
-const header = document.getElementById("header");
-function updateStickyHeader() {
-  if (!header) return;
-  header.classList.toggle("sticky", window.scrollY > 20);
-}
-window.addEventListener("scroll", updateStickyHeader, { passive: true });
-updateStickyHeader();
+/* ---------- Header: hairline once scrolled, hides while scrolling down ---------- */
 
-// Intersection observer for fade-in
-const observerOptions = { threshold: 0.12, rootMargin: "0px 0px -40px 0px" };
-const fadeObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-      fadeObserver.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
+const header = document.querySelector(".site-header");
+const siteNav = document.getElementById("site-nav");
+let lastScrollY = window.scrollY;
 
-document.querySelectorAll(".fade, .fade-up").forEach((el) => fadeObserver.observe(el));
+function updateHeader() {
+  const y = window.scrollY;
+  const scrollingDown = y > lastScrollY;
+  const menuIsOpen = siteNav.classList.contains("is-open");
 
-// Skill bar animation
-const barObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll(".exp-bar-fill").forEach((fill) => {
-        // Small delay so CSS transition fires after element is in view
-        setTimeout(() => fill.classList.add("animated"), 100);
-      });
-      barObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.3 });
-
-const expCard = document.querySelector(".exp-card");
-if (expCard) barObserver.observe(expCard);
-
-// Mobile menu
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobile-menu");
-const mobileBackdrop = document.getElementById("mobile-menu-backdrop");
-const mobileClose = document.getElementById("mobile-menu-close");
-
-function openMobileMenu() {
-  if (!mobileMenu) return;
-  mobileMenu.classList.add("is-open");
-  mobileMenu.setAttribute("aria-hidden", "false");
-  mobileBackdrop.classList.add("is-visible");
-  hamburger.classList.add("is-open");
-  hamburger.setAttribute("aria-expanded", "true");
-  document.body.classList.add("menu-open");
+  header.classList.toggle("is-scrolled", y > 8);
+  header.classList.toggle("is-hidden", scrollingDown && y > 160 && !menuIsOpen);
+  lastScrollY = y;
 }
 
-function closeMobileMenu() {
-  if (!mobileMenu) return;
-  mobileMenu.classList.remove("is-open");
-  mobileMenu.setAttribute("aria-hidden", "true");
-  mobileBackdrop.classList.remove("is-visible");
-  hamburger.classList.remove("is-open");
-  hamburger.setAttribute("aria-expanded", "false");
-  document.body.classList.remove("menu-open");
-}
+/* ---------- Process: the line fills as the steps scroll into view ---------- */
 
-if (hamburger) {
-  hamburger.addEventListener("click", (e) => {
-    e.stopPropagation();
-    if (mobileMenu.classList.contains("is-open")) {
-      closeMobileMenu();
-    } else {
-      openMobileMenu();
-    }
+const steps = document.querySelector(".steps");
+const stepItems = steps ? [...steps.querySelectorAll(".step")] : [];
+
+function updateSteps() {
+  if (!steps) return;
+  const rect = steps.getBoundingClientRect();
+  const start = window.innerHeight * 0.8; // starts filling when the steps reach 80% down the screen
+  const progress = Math.min(Math.max((start - rect.top) / rect.height, 0), 1);
+
+  steps.style.setProperty("--progress", progress.toFixed(3));
+  stepItems.forEach((step, index) => {
+    step.classList.toggle("is-active", progress > index / stepItems.length);
   });
 }
 
-if (mobileClose) mobileClose.addEventListener("click", closeMobileMenu);
-if (mobileBackdrop) mobileBackdrop.addEventListener("click", closeMobileMenu);
+// Run both on scroll, at most once per frame
+let ticking = false;
 
-// Close on nav link click
-if (mobileMenu) {
-  mobileMenu.querySelectorAll('a[href^="#"]').forEach((link) => {
-    link.addEventListener("click", closeMobileMenu);
-  });
-}
-
-window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && mobileMenu?.classList.contains("is-open")) {
-    closeMobileMenu();
-  }
-});
-
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 768 && mobileMenu?.classList.contains("is-open")) {
-    closeMobileMenu();
-  }
-});
-
-// FAQ accordion
-document.querySelectorAll(".faq-question").forEach((question) => {
-  question.addEventListener("click", () => {
-    const item = question.closest(".faq-item");
-    const answer = item.querySelector(".faq-answer");
-    const isOpen = item.classList.contains("active");
-
-    // Close all
-    document.querySelectorAll(".faq-item.active").forEach((openItem) => {
-      openItem.classList.remove("active");
-      openItem.querySelector(".faq-question").setAttribute("aria-expanded", "false");
-      openItem.querySelector(".faq-answer").style.maxHeight = "0";
+window.addEventListener(
+  "scroll",
+  () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      updateHeader();
+      updateSteps();
+      ticking = false;
     });
+  },
+  { passive: true }
+);
 
-    // Open clicked
-    if (!isOpen) {
-      item.classList.add("active");
-      question.setAttribute("aria-expanded", "true");
-      answer.style.maxHeight = answer.scrollHeight + "px";
+updateHeader();
+updateSteps();
+
+/* ---------- Mobile menu ---------- */
+
+const menuToggle = document.querySelector(".menu-toggle");
+
+function setMenu(open) {
+  if (open) header.classList.remove("is-hidden"); // keep the header in view while the menu is open
+  menuToggle.setAttribute("aria-expanded", String(open));
+  siteNav.classList.toggle("is-open", open);
+  document.body.classList.toggle("menu-open", open);
+}
+
+menuToggle.addEventListener("click", () => {
+  setMenu(menuToggle.getAttribute("aria-expanded") !== "true");
+});
+
+// Close the menu after picking a link
+siteNav.addEventListener("click", (event) => {
+  if (event.target.closest("a")) setMenu(false);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && siteNav.classList.contains("is-open")) {
+    setMenu(false);
+    menuToggle.focus();
+  }
+});
+
+// Close it if the screen grows past the mobile layout
+window.matchMedia("(min-width: 861px)").addEventListener("change", (event) => {
+  if (event.matches) setMenu(false);
+});
+
+/* ---------- Fade sections in as they scroll into view ---------- */
+
+const revealItems = document.querySelectorAll(".reveal, .stagger");
+
+if (reduceMotion || !("IntersectionObserver" in window)) {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+} else {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+  );
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+}
+
+/* ---------- Hero: the screenshots drift gently with the mouse ---------- */
+
+const heroVisual = document.querySelector(".hero-visual");
+const hasMouse = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+if (heroVisual && hasMouse && !reduceMotion) {
+  const hero = heroVisual.closest(".hero");
+
+  hero.addEventListener("pointermove", (event) => {
+    const rect = hero.getBoundingClientRect();
+    // -1 on the left/top edge, 1 on the right/bottom edge
+    const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    const y = ((event.clientY - rect.top) / rect.height) * 2 - 1;
+    heroVisual.style.setProperty("--mx", x.toFixed(3));
+    heroVisual.style.setProperty("--my", y.toFixed(3));
+  });
+
+  hero.addEventListener("pointerleave", () => {
+    heroVisual.style.setProperty("--mx", 0);
+    heroVisual.style.setProperty("--my", 0);
+  });
+}
+
+/* ---------- FAQ: smooth open and close, one answer at a time ---------- */
+
+const faqItems = document.querySelectorAll(".faq-item");
+const faqTiming = { duration: 550, easing: "cubic-bezier(0.22, 1, 0.36, 1)" };
+
+function openFaq(item) {
+  const answer = item.querySelector(".faq-answer");
+  item.open = true;
+  answer.animate(
+    [
+      { height: "0px", opacity: 0 },
+      { height: `${answer.scrollHeight}px`, opacity: 1 },
+    ],
+    faqTiming
+  );
+}
+
+function closeFaq(item) {
+  const answer = item.querySelector(".faq-answer");
+  item.classList.add("is-closing");
+  const animation = answer.animate(
+    [
+      { height: `${answer.scrollHeight}px`, opacity: 1 },
+      { height: "0px", opacity: 0 },
+    ],
+    faqTiming
+  );
+  animation.onfinish = () => {
+    item.open = false;
+    item.classList.remove("is-closing");
+  };
+}
+
+faqItems.forEach((item) => {
+  item.querySelector("summary").addEventListener("click", (event) => {
+    if (reduceMotion) return; // let the browser open it instantly
+    event.preventDefault();
+
+    if (item.open && !item.classList.contains("is-closing")) {
+      closeFaq(item);
+    } else {
+      faqItems.forEach((other) => {
+        if (other !== item && other.open) closeFaq(other);
+      });
+      openFaq(item);
     }
   });
 });
 
-// Contact form
+/* ---------- Contact form: send through FormSubmit without leaving the page ---------- */
+
 const contactForm = document.querySelector(".contact-form");
-const formStatus = document.querySelector(".form-status");
+const formStatus = contactForm.querySelector(".form-status");
 
-if (contactForm && formStatus) {
-  contactForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
+contactForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  if (!contactForm.reportValidity()) return;
 
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    const btnSpan = submitBtn?.querySelector("span");
-    const originalText = btnSpan?.textContent ?? submitBtn?.textContent ?? "Send message";
+  const button = contactForm.querySelector('button[type="submit"]');
+  const buttonLabel = button.querySelector("span");
+  const originalLabel = buttonLabel.textContent;
 
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      if (btnSpan) btnSpan.textContent = "Sending…";
+  button.disabled = true;
+  buttonLabel.textContent = "Sending…";
+  formStatus.textContent = "";
+  formStatus.className = "form-status";
+
+  try {
+    const response = await fetch(contactForm.action, {
+      method: "POST",
+      body: new FormData(contactForm),
+      headers: { Accept: "application/json" },
+    });
+    const result = await response.json();
+
+    if (!response.ok || String(result.success) !== "true") {
+      throw new Error("FormSubmit did not accept the message");
     }
 
-    formStatus.textContent = "";
-    formStatus.className = "form-status";
+    contactForm.reset();
+    formStatus.textContent = "Thank you! Your message is on its way. I'll reply soon.";
+    formStatus.classList.add("is-success");
+  } catch {
+    formStatus.textContent =
+      "Sorry, that didn't send. Please try again, or email me at mystique20084589@gmail.com.";
+    formStatus.classList.add("is-error");
+  } finally {
+    button.disabled = false;
+    buttonLabel.textContent = originalLabel;
+  }
+});
 
-    try {
-      const response = await fetch(contactForm.action, {
-        method: "POST",
-        body: new FormData(contactForm),
-        headers: { Accept: "application/json" },
-      });
+/* ---------- Keep the copyright year current ---------- */
 
-      const result = await response.json();
-
-      if (response.ok && (result.success === true || result.success === "true")) {
-        formStatus.textContent = "Message sent successfully. I'll be in touch soon!";
-        formStatus.classList.add("is-success");
-        contactForm.reset();
-      } else {
-        formStatus.textContent =
-          "Could not send. Check FormSubmit activation email and spam folder.";
-        formStatus.classList.add("is-error");
-      }
-    } catch {
-      formStatus.textContent = "Network error while sending. Please try again.";
-      formStatus.classList.add("is-error");
-    } finally {
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        if (btnSpan) btnSpan.textContent = originalText;
-      }
-    }
-  });
-}
-
-// Back to top
-const backToTopBtn = document.getElementById("backToTop");
-
-function updateBackToTop() {
-  if (!backToTopBtn) return;
-  backToTopBtn.classList.toggle("is-visible", window.scrollY > 480);
-}
-
-if (backToTopBtn) {
-  backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-  window.addEventListener("scroll", updateBackToTop, { passive: true });
-  updateBackToTop();
-}
-
-// Touch card feedback
-const isTouchUI = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
-const tapTargetSelector = ".service-card, .project-content, .platform-link";
-
-if (isTouchUI) {
-  let tapTimeout;
-  document.addEventListener("pointerdown", (e) => {
-    const card = e.target.closest(tapTargetSelector);
-    clearTimeout(tapTimeout);
-    document.querySelectorAll(`${tapTargetSelector}.tap-active`).forEach((el) => el.classList.remove("tap-active"));
-    if (card) {
-      card.classList.add("tap-active");
-      tapTimeout = setTimeout(() => card.classList.remove("tap-active"), 700);
-    }
-  });
-}
+document.querySelectorAll("[data-year]").forEach((element) => {
+  element.textContent = new Date().getFullYear();
+});

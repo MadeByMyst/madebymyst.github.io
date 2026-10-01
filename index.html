@@ -3,874 +3,752 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MadeByMyst | Front-End Developer</title>
+    <title>MadeByMyst | Simple websites for small businesses</title>
+    <meta
+      name="description"
+      content="Mysti is a front-end developer in Oman who builds simple, fast websites for small businesses and new products, in plain HTML, CSS and JavaScript."
+    />
+    <meta name="theme-color" content="#111111" />
+    <link rel="canonical" href="https://madebymyst.github.io/" />
+
+    <!-- Link previews (WhatsApp, Instagram, LinkedIn, X...) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://madebymyst.github.io/" />
+    <meta property="og:title" content="MadeByMyst | Websites, simple on purpose" />
+    <meta
+      property="og:description"
+      content="Landing pages and business websites for small businesses and new products. Front-end developer based in Oman."
+    />
+    <meta
+      property="og:image"
+      content="https://madebymyst.github.io/assets/social-card.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Epunda+Sans:ital,wght@0,300..900;1,300..900&family=M+PLUS+2:wght@300..800&display=swap"
+    />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
     <script src="script.js" defer></script>
   </head>
 
   <body>
-    <!-- Scroll progress -->
-    <div class="scroll-progress" id="scrollProgress"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!--HEADER-->
-    <header id="header">
-      <div class="header-inner">
-        <a href="index.html" class="logo" aria-label="MadeByMyst home">
-          <img src="assets/logo-colored.webp" alt="" width="38" height="38" />
-          <span class="logo-name">MadeByMyst</span>
+    <!-- HEADER -->
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="MadeByMyst, back to top">
+          <img src="assets/logo-colored.webp" alt="" width="32" height="32" />
+          <span class="brand-name">MadeBy<span>Myst</span></span>
         </a>
 
-        <nav class="desktop-nav" aria-label="Primary navigation">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#services">Services</a>
-          <a href="#faq">FAQ</a>
-        </nav>
-
-        <a href="#contact" class="btn-hire">Hire me</a>
-
         <button
-          class="hamburger"
-          id="hamburger"
-          aria-label="Open menu"
+          class="menu-toggle"
+          type="button"
           aria-expanded="false"
-          aria-controls="mobile-menu"
+          aria-controls="site-nav"
         >
-          <span></span><span></span><span></span>
+          <span class="visually-hidden">Menu</span>
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
+          <span class="bar" aria-hidden="true"></span>
         </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+          <a class="btn btn-primary btn-small" href="#contact">Hire me</a>
+        </nav>
       </div>
     </header>
 
-    <!-- Mobile nav overlay -->
-    <div
-      class="mobile-menu"
-      id="mobile-menu"
-      aria-hidden="true"
-      role="dialog"
-      aria-label="Mobile navigation"
-    >
-      <button
-        class="mobile-menu-close"
-        id="mobile-menu-close"
-        aria-label="Close menu"
-      >
-        &times;
-      </button>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#services">Services</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact" class="btn-hire mobile-hire">Hire me</a>
-      </nav>
-      <div class="mobile-menu-socials">
-        <a
-          href="https://x.com/my_st45"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Twitter/X"
-          ><ion-icon name="logo-twitter"></ion-icon
-        ></a>
-        <a
-          href="https://www.linkedin.com/in/mystique-x-9572b93a7/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          ><ion-icon name="logo-linkedin"></ion-icon
-        ></a>
-        <a
-          href="https://www.instagram.com/_mystiqdev72/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-          ><ion-icon name="logo-instagram"></ion-icon
-        ></a>
-        <a
-          href="https://github.com/MadeByMyst"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub"
-          ><ion-icon name="logo-github"></ion-icon
-        ></a>
-      </div>
-    </div>
-    <div
-      class="mobile-menu-backdrop"
-      id="mobile-menu-backdrop"
-      aria-hidden="true"
-    ></div>
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <h1 class="hero-title" id="hero-title">
+              <span class="line"><span>Hi, I'm Mysti.</span></span>
+              <span class="line"><span>My websites are</span></span>
+              <span class="line"><span class="accent">simple on purpose.</span></span>
+            </h1>
 
-    <!--HERO-->
-    <section class="hero" aria-label="Introduction">
-      <div class="hero-bg-grid" aria-hidden="true"></div>
+            <p class="lead hero-fade">
+              Front-end developer from Oman. I make landing pages and business
+              websites for small businesses and new products: clear, quick to
+              load and easy to use on any phone.
+            </p>
 
-      <div class="hero-inner">
-        <h1 class="hero-title fade-up delay-1">
-          <span class="hero-title-line">Front-End</span>
-          <span class="hero-title-line hero-name">MadeByMyst</span>
-          <span class="hero-title-line">Developer</span>
-        </h1>
+            <div class="actions hero-fade">
+              <a class="btn btn-primary" href="#contact">
+                Start a project
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+              <a class="btn btn-ghost" href="#work">See my work</a>
+            </div>
 
-        <p class="hero-sub fade-up delay-2">
-          I'm <strong>Mysti</strong> — I build clean, fast, and beautifully
-          interactive websites using pure HTML, CSS &amp; JavaScript. No
-          frameworks, no bloat — just craftsmanship.
-        </p>
+            <p class="hero-note hero-fade">
+              Available for new projects · Based in Oman (GMT+4)
+            </p>
+          </div>
 
-        <div class="hero-actions fade-up delay-3">
-          <a href="#contact" class="btn-primary">Start a project</a>
-          <a href="#projects" class="btn-ghost">See my work</a>
-        </div>
-
-        <div class="hero-socials fade-up delay-4" aria-label="Social links">
-          <a
-            href="https://x.com/my_st45"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter"
-          >
-            <ion-icon name="logo-twitter"></ion-icon>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/mystique-x-9572b93a7/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <ion-icon name="logo-linkedin"></ion-icon>
-          </a>
-          <a
-            href="https://www.instagram.com/_mystiqdev72/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          >
-            <ion-icon name="logo-instagram"></ion-icon>
-          </a>
-          <a
-            href="https://github.com/MadeByMyst"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <ion-icon name="logo-github"></ion-icon>
+          <a class="hero-visual" href="#work" aria-label="See my work">
+            <img
+              class="shot shot-back"
+              src="assets/work-logans-cafe.webp"
+              alt=""
+              width="1200"
+              height="750"
+            />
+            <img
+              class="shot shot-front"
+              src="assets/work-silicon-vpn.webp"
+              alt=""
+              width="1200"
+              height="750"
+            />
           </a>
         </div>
-      </div>
+      </section>
 
-      <div class="hero-stat-strip fade-up delay-4" aria-label="Key stats">
-        <div class="stat-item">
-          <span class="stat-num">2+</span>
-          <span class="stat-label">Years of practice</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <span class="stat-num">3+</span>
-          <span class="stat-label">Projects completed</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <span class="stat-num">100%</span>
-          <span class="stat-label">Vanilla coding</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <span class="stat-num">Fast</span>
-          <span class="stat-label">Delivery guaranteed</span>
-        </div>
-      </div>
-    </section>
-
-    <!--ABOUT-->
-    <section class="about" id="about" aria-labelledby="about-heading">
-      <div class="section-inner about-inner">
-        <div class="about-text fade">
-          <div class="section-tag">Who I am</div>
-          <h2 id="about-heading">
-            A developer who<br /><em>cares about details</em>
-          </h2>
-          <p>
-            Hi, I'm Mysti, also known as Shahab — a front-end developer based in
-            Oman. I specialize in clean, responsive websites that load fast,
-            look sharp on every device, and feel genuinely crafted rather than
-            assembled.
+      <!-- WHY SIMPLE -->
+      <section class="section" aria-labelledby="why-title">
+        <div class="container">
+          <h2 class="reveal" id="why-title">Why simple?</h2>
+          <p class="statement reveal">
+            Most people decide in a few seconds whether to stay on a website.
+            So I keep things <span class="accent">simple on purpose</span>:
+            one clear message, pages that load fast on any phone, and plain
+            code that's easy to change later.
           </p>
-          <p>
-            I build with pure HTML, CSS, and Vanilla JavaScript. No frameworks
-            yet — just lean, efficient code that does exactly what it needs to
-            without any unnecessary bloat.
-          </p>
-          <div class="about-badges">
-            <span class="badge">Clean code</span>
-            <span class="badge">Vanilla coding</span>
-            <span class="badge">Fast delivery</span>
-            <span class="badge">Mobile-friendly</span>
-          </div>
+
+          <ul class="pillars stagger">
+            <li>
+              <h3>Clear</h3>
+              <p>
+                Visitors understand what you do and what to click next, without
+                hunting for it.
+              </p>
+            </li>
+            <li>
+              <h3>Fast</h3>
+              <p>
+                No frameworks or heavy add-ons, so pages stay light even on a
+                slow connection.
+              </p>
+            </li>
+            <li>
+              <h3>Easy to change</h3>
+              <p>
+                Plain HTML, CSS and JavaScript that any developer can read and
+                update.
+              </p>
+            </li>
+          </ul>
         </div>
+      </section>
 
-        <div class="about-visual fade delay-1">
-          <div class="tech-card">
-            <div class="tech-card-header">Tech Stack</div>
-            <div class="tech-grid">
-              <div class="tech-item">
-                <img src="assets/html.webp" alt="HTML5" />
-                <span>HTML5</span>
-              </div>
-              <div class="tech-item">
-                <img src="assets/css.webp" alt="CSS3" />
-                <span>CSS3</span>
-              </div>
-              <div class="tech-item">
-                <img src="assets/js.webp" alt="JavaScript" />
-                <span>JavaScript</span>
-              </div>
-              <div class="tech-item">
-                <img src="assets/git.webp" alt="Git" />
-                <span>Git</span>
-              </div>
-              <div class="tech-item">
-                <img src="assets/vscode.webp" alt="VS Code" />
-                <span>VS Code</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="exp-card fade delay-2">
-            <div class="exp-bar">
-              <span class="exp-bar-label">HTML &amp; CSS</span>
-              <div class="exp-bar-track">
-                <div class="exp-bar-fill" style="--w: 92%"></div>
-              </div>
-              <span class="exp-bar-pct">92%</span>
-            </div>
-            <div class="exp-bar">
-              <span class="exp-bar-label">JavaScript</span>
-              <div class="exp-bar-track">
-                <div class="exp-bar-fill" style="--w: 70%"></div>
-              </div>
-              <span class="exp-bar-pct">70%</span>
-            </div>
-            <div class="exp-bar">
-              <span class="exp-bar-label">Responsive Design</span>
-              <div class="exp-bar-track">
-                <div class="exp-bar-fill" style="--w: 88%"></div>
-              </div>
-              <span class="exp-bar-pct">88%</span>
-            </div>
-            <div class="exp-bar">
-              <span class="exp-bar-label">UI/UX Sensibility</span>
-              <div class="exp-bar-track">
-                <div class="exp-bar-fill" style="--w: 80%"></div>
-              </div>
-              <span class="exp-bar-pct">80%</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--SERVICES-->
-    <section class="services" id="services" aria-labelledby="services-heading">
-      <div class="section-inner">
-        <div class="section-header fade">
-          <div class="section-tag">What I do</div>
-          <h2 id="services-heading">Services I provide</h2>
-        </div>
-
-        <div class="services-grid">
-          <div class="service-card fade">
-            <div class="service-icon" aria-hidden="true">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-            <h3>Responsive Design</h3>
+      <!-- WORK -->
+      <section class="section" id="work" aria-labelledby="work-title">
+        <div class="container">
+          <div class="section-top reveal">
+            <h2 id="work-title">Recent work</h2>
             <p>
-              Websites that work flawlessly on every screen — from phones to
-              ultrawide monitors. Fluid layouts, adaptive components, and
-              mobile-first thinking.
+              Two concept sites for made-up brands, designed and built to show
+              how I'd handle a real brief.
             </p>
-            <div class="service-tag">All devices</div>
           </div>
 
-          <div class="service-card fade delay-1">
-            <div class="service-icon" aria-hidden="true">
-              <ion-icon name="flash-outline"></ion-icon>
-            </div>
-            <h3>Quick Development</h3>
-            <p>
-              Fast, efficient delivery without cutting corners. I move quickly
-              through the build process while keeping every detail polished and
-              every line intentional.
-            </p>
-            <div class="service-tag">On schedule</div>
-          </div>
-
-          <div class="service-card fade delay-2">
-            <div class="service-icon" aria-hidden="true">
-              <ion-icon name="sparkles-outline"></ion-icon>
-            </div>
-            <h3>Interactive Pages</h3>
-            <p>
-              Smooth animations, hover effects, and micro-interactions that give
-              your site personality. Nothing gratuitous — every motion earns its
-              place.
-            </p>
-            <div class="service-tag">Polished UX</div>
-          </div>
-
-          <div class="service-card fade delay-3">
-            <div class="service-icon" aria-hidden="true">
-              <ion-icon name="code-slash-outline"></ion-icon>
-            </div>
-            <h3>Vanilla Coding</h3>
-            <p>
-              Pure HTML, CSS, and JavaScript — no React, no bloat. Lean,
-              fast-loading sites with clean code you can actually read and
-              maintain long-term.
-            </p>
-            <div class="service-tag">No frameworks</div>
-          </div>
-
-          <div class="service-card fade delay-1">
-            <div class="service-icon" aria-hidden="true">
-              <ion-icon name="layers-outline"></ion-icon>
-            </div>
-            <h3>Landing Pages</h3>
-            <p>
-              Conversion-focused landing pages that grab attention, guide
-              visitors through your value proposition, and compel them to take
-              action.
-            </p>
-            <div class="service-tag">High conversion</div>
-          </div>
-
-          <div class="service-card fade delay-2">
-            <div class="service-icon" aria-hidden="true">
-              <ion-icon name="briefcase-outline"></ion-icon>
-            </div>
-            <h3>Business Sites</h3>
-            <p>
-              Professional websites that build credibility, showcase your
-              services clearly, and make your brand look ready for real clients
-              and serious business.
-            </p>
-            <div class="service-tag">Brand presence</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--PROJECTS-->
-    <section class="projects" id="projects" aria-labelledby="projects-heading">
-      <div class="section-inner">
-        <div class="section-header fade">
-          <div class="section-tag">My work</div>
-          <h2 id="projects-heading">Selected projects</h2>
-        </div>
-
-        <div class="projects-list">
-          <article class="project-item fade">
-            <div class="project-meta">
-              <span class="project-num">01</span>
-              <div class="project-tags">
-                <span>Landing Page</span>
-                <span>HTML/CSS/JS</span>
-              </div>
-            </div>
-            <div class="project-content">
-              <div class="project-text">
-                <h3>SiliconVPN</h3>
-                <p>
-                  A polished landing page for a fictional VPN service. Built to
-                  demonstrate modern landing page design — bold hero section,
-                  feature breakdowns, pricing cards, and persuasive copy
-                  structure.
-                </p>
-                <div class="project-links">
-                  <a
-                    href="https://github.com/MadeByMyst/silicon-vpn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link"
-                  >
-                    <ion-icon name="logo-github"></ion-icon> GitHub
-                  </a>
-                  <a
-                    href="https://madebymyst.github.io/silicon-vpn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn-primary"
-                  >
-                    <ion-icon name="open-outline"></ion-icon> Live Site
-                  </a>
-                </div>
-              </div>
-              <div class="project-img-wrap">
-                <img
-                  src="assets/svpn.webp"
-                  alt="SiliconVPN project screenshot"
-                  loading="lazy"
-                />
-                <div class="project-img-overlay" aria-hidden="true"></div>
-              </div>
+          <article class="project reveal">
+            <a
+              class="project-image"
+              href="https://madebymyst.github.io/silicon-vpn/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/work-silicon-vpn.webp"
+                alt="SiliconVPN homepage with the headline “Access the world. Your way.” over a photo of the Earth at night"
+                width="1200"
+                height="750"
+                loading="lazy"
+              />
+              <span class="visually-hidden">Visit SiliconVPN (opens in a new tab)</span>
+            </a>
+            <div class="project-text">
+              <h3>SiliconVPN</h3>
+              <p class="project-meta">Landing page · Concept brand</p>
+              <p>
+                A landing page for a privacy app that explains, in plain words,
+                why public Wi-Fi isn't private, then gets out of the way: features,
+                simple pricing and an FAQ.
+              </p>
+              <p class="project-links">
+                <a
+                  class="link"
+                  href="https://madebymyst.github.io/silicon-vpn/"
+                  target="_blank"
+                  rel="noopener"
+                  >Visit site
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 17 17 7M8 7h9v9" />
+                  </svg>
+                  <span class="visually-hidden">(opens in a new tab)</span></a
+                >
+                <a
+                  class="link"
+                  href="https://github.com/MadeByMyst/silicon-vpn"
+                  target="_blank"
+                  rel="noopener"
+                  >View code
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 17 17 7M8 7h9v9" />
+                  </svg>
+                  <span class="visually-hidden">(opens in a new tab)</span></a
+                >
+              </p>
             </div>
           </article>
 
-          <article class="project-item fade delay-1 reverse">
-            <div class="project-meta">
-              <span class="project-num">02</span>
-              <div class="project-tags">
-                <span>Business Site</span>
-                <span>HTML/CSS/JS</span>
-              </div>
-            </div>
-            <div class="project-content">
-              <div class="project-text">
-                <h3>Logan's Cafe</h3>
-                <p>
-                  A warm, atmospheric site for a fictional café. Showcases my
-                  approach to business websites — inviting aesthetic, clear menu
-                  presentation, and a layout that builds trust and drives foot
-                  traffic.
-                </p>
-                <div class="project-links">
-                  <a
-                    href="https://github.com/MadeByMyst/logans-cafe"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link"
-                  >
-                    <ion-icon name="logo-github"></ion-icon> GitHub
-                  </a>
-                  <a
-                    href="https://madebymyst.github.io/logans-cafe/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn-primary"
-                  >
-                    <ion-icon name="open-outline"></ion-icon> Live Site
-                  </a>
-                </div>
-              </div>
-              <div class="project-img-wrap">
-                <img
-                  src="assets/LogansCafe.webp"
-                  alt="Logan's Cafe project screenshot"
-                  loading="lazy"
-                />
-                <div class="project-img-overlay" aria-hidden="true"></div>
-              </div>
+          <article class="project project-flip reveal">
+            <a
+              class="project-image"
+              href="https://madebymyst.github.io/logans-cafe/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="assets/work-logans-cafe.webp"
+                alt="Logan'sCafe homepage with the headline “Crafted with care, served with love.” over a photo of coffee cups"
+                width="1200"
+                height="750"
+                loading="lazy"
+              />
+              <span class="visually-hidden">Visit Logan'sCafe (opens in a new tab)</span>
+            </a>
+            <div class="project-text">
+              <h3>Logan'sCafe</h3>
+              <p class="project-meta">Business website · Concept brand</p>
+              <p>
+                A website for a cosy neighbourhood café: warm photos, a menu you
+                can scan in seconds, and opening hours that tell you if it's
+                open right now.
+              </p>
+              <p class="project-links">
+                <a
+                  class="link"
+                  href="https://madebymyst.github.io/logans-cafe/"
+                  target="_blank"
+                  rel="noopener"
+                  >Visit site
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 17 17 7M8 7h9v9" />
+                  </svg>
+                  <span class="visually-hidden">(opens in a new tab)</span></a
+                >
+                <a
+                  class="link"
+                  href="https://github.com/MadeByMyst/logans-cafe"
+                  target="_blank"
+                  rel="noopener"
+                  >View code
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 17 17 7M8 7h9v9" />
+                  </svg>
+                  <span class="visually-hidden">(opens in a new tab)</span></a
+                >
+              </p>
             </div>
           </article>
 
-          <article class="project-item project-coming-soon fade delay-2">
-            <div class="project-meta">
-              <span class="project-num">03</span>
-              <div class="project-tags">
-                <span>In Progress</span>
-              </div>
-            </div>
-            <div class="project-content">
-              <div class="project-text">
-                <h3>Coming Soon</h3>
-                <p>
-                  The next project is currently in development. Stay tuned —
-                  something new is on the way.
-                </p>
-                <div class="project-wip-badge">
-                  <span class="wip-dot" aria-hidden="true"></span>
-                  Under development
-                </div>
-              </div>
-              <div class="project-img-wrap coming-soon-img">
-                <img src="assets/home-background4.webp" alt="" loading="lazy" />
-                <div class="coming-soon-overlay" aria-hidden="true">
-                  <span>Soon™</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!--PROCESS-->
-    <section class="process" aria-labelledby="process-heading">
-      <div class="section-inner">
-        <div class="section-header fade">
-          <div class="section-tag">How it works</div>
-          <h2 id="process-heading">My process</h2>
-        </div>
-
-        <div class="process-track">
-          <div class="process-line" aria-hidden="true"></div>
-          <div class="process-steps">
-            <div class="process-step fade">
-              <div class="ps-num" aria-hidden="true">01</div>
-              <div class="ps-body">
-                <h3>Discovery &amp; Brief</h3>
-                <p>
-                  We discuss your goals, brand, and what you need. You share
-                  content, references, and preferences — I ask the right
-                  questions to fully understand your vision.
-                </p>
-              </div>
-            </div>
-            <div class="process-step fade delay-1">
-              <div class="ps-num" aria-hidden="true">02</div>
-              <div class="ps-body">
-                <h3>Design &amp; Build</h3>
-                <p>
-                  I craft a clean, responsive layout tailored to your brand.
-                  Every detail is considered — typography, spacing, animations,
-                  and mobile experience.
-                </p>
-              </div>
-            </div>
-            <div class="process-step fade delay-2">
-              <div class="ps-num" aria-hidden="true">03</div>
-              <div class="ps-body">
-                <h3>Review &amp; Deliver</h3>
-                <p>
-                  You review the result, request any tweaks, and once you're
-                  satisfied — I hand over clean, commented code ready for
-                  deployment. Revisions always included.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--FAQ-->
-    <section class="faq" id="faq" aria-labelledby="faq-heading">
-      <div class="section-inner faq-inner">
-        <div class="faq-left fade">
-          <div class="section-tag">Questions</div>
-          <h2 id="faq-heading">Frequently asked</h2>
-          <p class="faq-sub">
-            Can't find your answer? <a href="#contact">Just ask me directly.</a>
+          <p class="work-more reveal">
+            And the site you're on now, my third project.
+            <a
+              class="link"
+              href="https://github.com/MadeByMyst/madebymyst.github.io"
+              target="_blank"
+              rel="noopener"
+              >See its code on GitHub
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17 17 7M8 7h9v9" />
+              </svg>
+              <span class="visually-hidden">(opens in a new tab)</span></a
+            >
           </p>
         </div>
+      </section>
 
-        <div class="faq-right fade delay-1">
-          <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span>What do you need from me to get started?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Please share your content (text &amp; images), your logo if you
-                have one, any colour preferences, and a few example websites you
-                like. That's everything I need to begin.
-              </p>
-            </div>
+      <!-- SERVICES -->
+      <section class="section" id="services" aria-labelledby="services-title">
+        <div class="container">
+          <div class="section-top reveal">
+            <h2 id="services-title">What I can make for you</h2>
           </div>
 
-          <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span>Will my website be mobile responsive?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
+          <div class="services stagger">
+            <article class="service">
+              <h3>Landing pages</h3>
               <p>
-                Absolutely. Every site I build is fully responsive and tested on
-                mobile, tablet, and desktop devices.
+                One page with one job: explain your product or offer, then get
+                people to sign up, book or get in touch.
               </p>
-            </div>
+              <p class="service-fit">
+                Good for launches, apps, services and events.
+              </p>
+            </article>
+            <article class="service">
+              <h3>Business websites</h3>
+              <p>
+                A few well-organised pages that show what you do and make it
+                easy for people to reach you.
+              </p>
+              <p class="service-fit">
+                Good for cafés, studios, local services and freelancers.
+              </p>
+            </article>
           </div>
 
-          <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span>Do you provide hosting or a domain?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                No — you'll need your own hosting and domain. I can guide you
-                through the setup process if you're not sure where to start.
-              </p>
+          <div class="extras">
+            <div class="reveal">
+              <h3>Every site comes with</h3>
+              <ul class="dot-list">
+                <li>Works on phones, tablets and desktops</li>
+                <li>Fast loading, no frameworks</li>
+                <li>Smooth, subtle animations</li>
+                <li>Clean, commented code, ready to go live</li>
+                <li>Revisions until it's right</li>
+                <li>Help setting up hosting and a domain</li>
+              </ul>
             </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span>Can you add more pages later?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
+            <div class="good-to-know reveal">
+              <h3>Good to know</h3>
               <p>
-                Yes. Additional pages are available as an extra service — just
-                reach out when you're ready to expand.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span>Do you build e-commerce websites?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                I currently focus on static and business websites. If you have
-                specific e-commerce requirements, contact me first and we can
-                discuss what's possible.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span>Can we discuss before placing an order?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Yes — I recommend it. Messaging first helps us align on your
-                requirements, avoid misunderstandings, and makes the whole
-                process smoother for both sides.
+                Hosting and a domain aren't included, but I'll help you set them
+                up. I don't build online stores right now, so if you need one,
+                message me first and we'll see what's possible. Extra pages can
+                always be added later.
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!--CONTACT -->
-    <section class="contact" id="contact" aria-labelledby="contact-heading">
-      <div class="section-inner contact-inner">
-        <div class="contact-left fade">
-          <div class="section-tag">Let's work together</div>
-          <h2 id="contact-heading">Start a conversation</h2>
-          <p>
-            Have a project in mind? I'd love to hear about it. Fill out the form
-            or find me on a freelance platform below — you can also reach out to
-            me on Instagram.
+      <!-- PROCESS -->
+      <section class="section" id="process" aria-labelledby="process-title">
+        <div class="container">
+          <div class="section-top reveal">
+            <h2 id="process-title">How it works</h2>
+            <p>Three steps, and you'll always know where things stand.</p>
+          </div>
+
+          <ol class="steps stagger">
+            <li class="step">
+              <span class="step-dot" aria-hidden="true"></span>
+              <h3>We talk</h3>
+              <p>
+                You tell me about your project and show me a few sites you like.
+                I'll ask questions until I understand what you need.
+              </p>
+            </li>
+            <li class="step">
+              <span class="step-dot" aria-hidden="true"></span>
+              <h3>I build it</h3>
+              <p>
+                I design and build the site around your brand, and check it on
+                phones, tablets and desktops as I go.
+              </p>
+            </li>
+            <li class="step">
+              <span class="step-dot" aria-hidden="true"></span>
+              <h3>You review, we launch</h3>
+              <p>
+                You ask for changes until it's right. Then I hand over clean,
+                commented code, ready to go live.
+              </p>
+            </li>
+          </ol>
+
+          <p class="needs reveal">
+            To get started, I'll need <strong>your text and images</strong>,
+            <strong>your logo</strong> if you have one,
+            <strong>colours you like</strong> and
+            <strong>a few websites you like</strong>.
           </p>
+        </div>
+      </section>
 
-          <div class="platform-links">
-            <a
-              href="https://www.fiverr.com/s/DBbLZDo"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="platform-link"
-            >
-              <img
-                src="assets/fiverr.webp"
-                alt="Fiverr"
-                width="32"
-                height="32"
-              />
-              <span>Fiverr</span>
-              <ion-icon name="arrow-forward-outline"></ion-icon>
-            </a>
-            <a
-              href="https://www.upwork.com/freelancers/~01f1c8b9c3e2a7b9e5"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="platform-link"
-            >
-              <img
-                src="assets/upwork.webp"
-                alt="Upwork"
-                width="32"
-                height="32"
-              />
-              <span>Upwork</span>
-              <ion-icon name="arrow-forward-outline"></ion-icon>
-            </a>
-            <a
-              href="https://www.instagram.com/_mystiqdev72/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="platform-link"
-            >
-              <img
-                src="assets/instagram.webp"
-                alt="Instagram"
-                width="32"
-                height="32"
-              />
-              <span>Instagram</span>
-              <ion-icon name="arrow-forward-outline"></ion-icon>
-            </a>
+      <!-- ABOUT -->
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="container about-grid">
+          <div class="about-text reveal">
+            <h2 id="about-title">A bit about me</h2>
+            <p class="about-lead">
+              I'm Mysti, a self-taught front-end developer from Oman. I've been
+              building websites for more than two years.
+            </p>
+            <p>
+              I work in plain HTML, CSS and JavaScript, without frameworks,
+              because it keeps sites fast and simple to look after. I care about
+              the small stuff too: spacing, how a menu opens on a phone, how
+              quickly a page shows up.
+            </p>
+            <p>
+              When we work together, you talk directly to the person building
+              your site.
+            </p>
+          </div>
+
+          <dl class="facts stagger">
+            <div>
+              <dt>Based in</dt>
+              <dd>Oman (GMT+4)</dd>
+            </div>
+            <div>
+              <dt>Building websites since</dt>
+              <dd>2024</dd>
+            </div>
+            <div>
+              <dt>Tools</dt>
+              <dd>HTML, CSS, JavaScript, Git, VS&nbsp;Code</dd>
+            </div>
+            <div>
+              <dt>Also on</dt>
+              <dd>Fiverr, Upwork, Contra and Guru</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq" aria-labelledby="faq-title">
+        <div class="container faq-grid">
+          <div class="faq-head reveal">
+            <h2 id="faq-title">Common questions</h2>
+            <p>
+              Can't find yours?
+              <a class="link" href="#contact">Ask me directly</a>.
+            </p>
+          </div>
+
+          <div class="faq-list reveal">
+            <details class="faq-item">
+              <summary>
+                What do you need from me to get started?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Your text and images, your logo if you have one, any colour
+                  preferences, and a few websites you like. That's enough to
+                  begin.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How much does a website cost?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  It depends on how many pages you need and what they should
+                  do. Send me a short description and I'll reply with a price
+                  for your project.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                How long does it take?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  That depends on the size of the site. You'll get an estimated
+                  timeline together with the price, before any work starts.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Will my website work on phones?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Yes. Every site I build is responsive and tested on phones,
+                  tablets and desktops.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Do you provide hosting or a domain?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  No, you'll need your own. If you're not sure where to start,
+                  I'll guide you through the setup.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Can you add more pages later?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Yes. Extra pages are available as an add-on whenever you're
+                  ready to grow.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Do you build online stores?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Not at the moment. I focus on landing pages and business
+                  websites. If you need e-commerce, message me first and we'll
+                  talk about what's possible.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Do you work with clients outside Oman?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Yes. I work remotely through Fiverr, Upwork, Contra and Guru,
+                  or directly by email.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>
+                Can we talk before I place an order?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Please do. A quick chat first helps us agree on what you need
+                  and makes everything smoother for both of us.
+                </p>
+              </div>
+            </details>
           </div>
         </div>
+      </section>
 
-        <div class="contact-right fade delay-1">
+      <!-- CONTACT -->
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div class="container contact-grid">
+          <div class="contact-intro reveal">
+            <h2 id="contact-title">
+              Got a project?<br /><span class="accent">Let's talk.</span>
+            </h2>
+            <p>
+              Send me a few details and I'll get back to you. Prefer a freelance
+              platform? You can find me on these too.
+            </p>
+
+            <ul class="channels">
+              <li>
+                <a href="mailto:mystique20084589@gmail.com">
+                  <svg class="icon channel-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3.5 6.5h17v11h-17z" />
+                    <path d="m4 7 8 6 8-6" />
+                  </svg>
+                  <span class="channel-text">
+                    <span class="channel-name">Email</span>
+                    <span class="channel-detail">mystique20084589@gmail.com</span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.fiverr.com/s/DBbLZDo" target="_blank" rel="noopener">
+                  <img src="assets/fiverr.webp" alt="" width="26" height="26" />
+                  <span class="channel-name">Fiverr</span>
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.upwork.com/freelancers/~01f1c8b9c3e2a7b9e5"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <img src="assets/upwork.webp" alt="" width="26" height="26" />
+                  <span class="channel-name">Upwork</span>
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://contra.com/mystique72_jug14sx9" target="_blank" rel="noopener">
+                  <img src="assets/contra.webp" alt="" width="26" height="26" />
+                  <span class="channel-name">Contra</span>
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.guru.com/freelancers/shahab-m" target="_blank" rel="noopener">
+                  <img src="assets/guru.webp" alt="" width="26" height="26" />
+                  <span class="channel-name">Guru</span>
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/_mystiqdev72/" target="_blank" rel="noopener">
+                  <img src="assets/instagram.webp" alt="" width="26" height="26" />
+                  <span class="channel-text">
+                    <span class="channel-name">Instagram</span>
+                    <span class="channel-detail">@_mystiqdev72</span>
+                  </span>
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
           <form
-            class="contact-form"
+            class="contact-form reveal"
             action="https://formsubmit.co/ajax/mystique20084589@gmail.com"
             method="post"
-            novalidate
           >
             <input
               type="hidden"
               name="_subject"
-              value="New message from MadeByMyst website"
+              value="New project enquiry from the MadeByMyst website"
             />
+            <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
             <input
+              class="visually-hidden"
               type="text"
               name="_honey"
-              style="display: none"
               tabindex="-1"
               autocomplete="off"
+              aria-hidden="true"
             />
 
-            <div class="form-row">
-              <label class="form-field" for="contact-subject">
-                <span class="form-label">Subject</span>
+            <div class="field-row">
+              <div class="field">
+                <label for="contact-name">Your name</label>
                 <input
-                  id="contact-subject"
-                  name="subject"
+                  id="contact-name"
+                  name="name"
                   type="text"
-                  placeholder="What's this about?"
+                  autocomplete="name"
                   required
                 />
-              </label>
-            </div>
-
-            <div class="form-row">
-              <label class="form-field" for="contact-email">
-                <span class="form-label">Email Address</span>
+              </div>
+              <div class="field">
+                <label for="contact-email">Email</label>
                 <input
                   id="contact-email"
                   name="email"
                   type="email"
+                  autocomplete="email"
                   placeholder="you@example.com"
                   required
                 />
-              </label>
+              </div>
             </div>
 
-            <div class="form-row">
-              <label class="form-field" for="contact-message">
-                <span class="form-label">Message</span>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  rows="5"
-                  placeholder="Tell me about your project..."
-                  required
-                ></textarea>
-              </label>
+            <div class="field">
+              <label for="contact-type">What do you need?</label>
+              <select id="contact-type" name="project">
+                <option>A landing page</option>
+                <option>A business website</option>
+                <option>Something else</option>
+                <option selected>Not sure yet</option>
+              </select>
             </div>
 
-            <button type="submit" class="btn-primary form-submit">
-              <span>Send message</span>
-              <ion-icon name="arrow-forward-outline"></ion-icon>
-            </button>
-            <p class="form-status" aria-live="polite"></p>
+            <div class="field">
+              <label for="contact-message">Tell me about it</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                rows="5"
+                placeholder="What are you building, and who is it for?"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-foot">
+              <button class="btn btn-primary" type="submit">
+                <span>Send message</span>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </div>
           </form>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!--FOOTER-->
-    <footer class="footer" id="footer">
-      <div class="footer-inner">
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-top">
         <div class="footer-brand">
-          <a href="index.html" class="logo footer-logo" aria-label="MadeByMyst">
+          <a class="brand" href="#top" aria-label="MadeByMyst, back to top">
             <img src="assets/logo-colored.webp" alt="" width="32" height="32" />
-            <span class="logo-name">MadeByMyst</span>
+            <span class="brand-name">MadeBy<span>Myst</span></span>
           </a>
-          <p class="footer-tagline">
-            Front-end developer from Oman crafting clean, fast, and beautiful
-            web experiences.
+          <p>
+            Simple websites for small businesses and new products. Based in
+            Oman.
           </p>
-          <div class="footer-socials">
-            <a
-              href="https://x.com/my_st45"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter/X"
-              ><ion-icon name="logo-twitter"></ion-icon
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/mystique-x-9572b93a7/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              ><ion-icon name="logo-linkedin"></ion-icon
-            ></a>
-            <a
-              href="https://www.instagram.com/_mystiqdev72/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              ><ion-icon name="logo-instagram"></ion-icon
-            ></a>
-            <a
-              href="https://github.com/MadeByMyst"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              ><ion-icon name="logo-github"></ion-icon
-            ></a>
-          </div>
         </div>
 
-        <div class="footer-col">
-          <span class="footer-col-title">Navigate</span>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#work">Work</a>
           <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#about">About</a>
           <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
-        </div>
+        </nav>
 
-        <div class="footer-col" id="credits">
-          <span class="footer-col-title">Credits</span>
-          <a
-            href="https://ionic.io/ionicons"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Ionicons"
-            >Icons — Ionicons</a
-          >
-          <a
-            href="https://formsubmit.co"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="FormSubmit"
-            >Contact form — FormSubmit</a
-          >
-          <a
-            href="https://github.com/MadeByMyst"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="MadeByMyst on GitHub"
-            >Designed &amp; built by MadeByMyst</a
-          >
-        </div>
+        <ul class="footer-social">
+          <li><a href="https://github.com/MadeByMyst" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.instagram.com/_mystiqdev72/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/mystique-x-9572b93a7/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
       </div>
 
-      <div class="footer-bottom">
-        <p>&copy; 2026 MadeByMyst. All rights reserved.</p>
-        <p class="footer-built">Built with HTML, CSS &amp; Vanilla JS</p>
+      <div class="container footer-bottom">
+        <p>&copy; <span data-year>2026</span> MadeByMyst (Shahab MD). All rights reserved.</p>
+        <p>
+          Fonts: Epunda Sans &amp; M PLUS 2 via
+          <a href="https://fonts.google.com" target="_blank" rel="noopener">Google Fonts</a>
+          · Form by
+          <a href="https://formsubmit.co" target="_blank" rel="noopener">FormSubmit</a>
+        </p>
+        <a href="#top">Back to top ↑</a>
       </div>
     </footer>
-
-    <!-- Back to top -->
-    <button
-      class="back-to-top"
-      id="backToTop"
-      type="button"
-      aria-label="Back to top"
-    >
-      <ion-icon name="arrow-up-outline"></ion-icon>
-    </button>
   </body>
 </html>
