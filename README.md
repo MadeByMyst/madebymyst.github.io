@@ -61,8 +61,7 @@ python3 -m http.server
 
 [![Fiverr](https://img.shields.io/badge/Fiverr-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white)](https://www.fiverr.com/s/DBbLZDo)
 [![Upwork](https://img.shields.io/badge/Upwork-6FDA44?style=for-the-badge&logo=upwork&logoColor=white)](https://www.upwork.com/freelancers/~01f1c8b9c3e2a7b9e5)
-[![Contra](https://img.shields.io/badge/Contra-000000?style=for-the-badge&logo=contra&logoColor=white)](https://contra.com/mystique72_jug14sx9)
-[![Guru](https://img.shields.io/badge/Guru-56B45D?style=for-the-badge&logo=guru&logoColor=white)](https://www.guru.com/freelancers/shahab-m)
+[![Freelancer](https://img.shields.io/badge/Freelancer-29B2FE?style=for-the-badge&logo=freelancer&logoColor=white)](https://www.freelancer.com/u/mystiqdev)
 [![Instagram](https://img.shields.io/badge/Instagram-__mystiqdev72-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/_mystiqdev72/)
 
 📧 mystique20084589@gmail.com
