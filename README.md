@@ -37,6 +37,7 @@ Every site works on phones, tablets and desktops, loads fast, comes with revisio
 |---|---|---|
 | **SiliconVPN** | Landing page, concept brand | [Live](https://madebymyst.github.io/silicon-vpn/) · [Code](https://github.com/MadeByMyst/silicon-vpn) |
 | **Logan'sCafe** | Business website, concept brand | [Live](https://madebymyst.github.io/logans-cafe/) · [Code](https://github.com/MadeByMyst/logans-cafe) |
+| **Logan'sCafe Dashboard** | Owner dashboard, concept brand | [Live](https://madebymyst.github.io/logans-cafe-dashboard/) · [Code](https://github.com/MadeByMyst/logans-cafe-dashboard) |
 | **MadeByMyst** | Portfolio, this repo | [Live](https://madebymyst.github.io/) |
 
 ## How this site is built
