@@ -1387,9 +1387,14 @@ strong {
     border-bottom: 0;
   }
 
-  .service + .service {
+  /* Two per row: a line between the columns, and between the rows */
+  .service:nth-child(even) {
     padding-left: 48px;
     border-left: 1px solid var(--line-strong);
+  }
+
+  .service:nth-child(n + 3) {
+    border-top: 1px solid var(--line-strong);
   }
 }
 

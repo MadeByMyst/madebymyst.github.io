@@ -12,7 +12,7 @@
 
 ![The MadeByMyst portfolio](assets/social-card.png)
 
-The portfolio of **Mysti**, a self-taught front-end developer in Oman who builds landing pages and business websites for small businesses and new products, in plain HTML, CSS and JavaScript.
+The portfolio of **Mysti**, a self-taught front-end developer in Oman who builds landing pages, business websites, online shops and dashboards for small businesses and new products, in plain HTML, CSS and JavaScript.
 
 ## Why simple?
 
@@ -28,6 +28,8 @@ Most people decide in a few seconds whether to stay on a website. So I keep thin
 |---|---|
 | **Landing pages** | One page with one job: explain your product or offer, then get people to sign up, book or get in touch. |
 | **Business websites** | A few well-organised pages that show what you do and make it easy for people to reach you. |
+| **Online shops** | A small shop people enjoy browsing: product pages, filters, a bag and a checkout that stay quick on any phone. |
+| **Dashboards** | One page for the numbers you check every day, like sales, orders or stock, with charts that are easy to read at a glance. |
 
 Every site works on phones, tablets and desktops, loads fast, comes with revisions, and is handed over as clean, commented code.
 
@@ -38,6 +40,7 @@ Every site works on phones, tablets and desktops, loads fast, comes with revisio
 | **SiliconVPN** | Landing page, concept brand | [Live](https://madebymyst.github.io/silicon-vpn/) · [Code](https://github.com/MadeByMyst/silicon-vpn) |
 | **Logan'sCafe** | Business website, concept brand | [Live](https://madebymyst.github.io/logans-cafe/) · [Code](https://github.com/MadeByMyst/logans-cafe) |
 | **Logan'sCafe Dashboard** | Owner dashboard, concept brand | [Live](https://madebymyst.github.io/logans-cafe-dashboard/) · [Code](https://github.com/MadeByMyst/logans-cafe-dashboard) |
+| **RECUR** | Online store, concept brand | [Live](https://madebymyst.github.io/recur/) · [Code](https://github.com/MadeByMyst/recur) |
 | **MadeByMyst** | Portfolio, this repo | [Live](https://madebymyst.github.io/) |
 
 ## How this site is built
